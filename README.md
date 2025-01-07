@@ -45,14 +45,6 @@ Welcome to **MyDailyLift**, a fitness mobile application designed to help you tr
 
 ---
 
-## 📱 Screenshots
-
-| Home Screen Overview | Exercises List | Routine Management |
-|-----------------------|----------------|---------------------|
-| ![Home Screen](screenshots/home_screen.png) | ![Exercises](screenshots/exercises_list.png) | ![Routines](screenshots/routine_management.png) |
-
----
-
 ## 🏗️ Project Structure
 - MyDailyLift/
   - app/

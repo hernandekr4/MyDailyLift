@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "name": "Push-Up",
+    "bodyPart": "Chest",
+    "target": "Pectorals",
+    "equipment": "None",
+    "secondaryMuscles": "Triceps, Shoulders",
+    "instructions": "Start in a plank position. Lower your body until your chest nearly touches the floor. Push yourself back up to the starting position."
+
+  },
+  {
+    "id": "2",
+    "name": "Squat",
+    "bodyPart": "Legs",
+    "target": "Quadriceps",
+    "equipment": "None",
+    "secondaryMuscles": "Glutes, Hamstrings",
+    "instructions": "Stand with feet shoulder-width apart. Lower your body until your thighs are parallel to the floor. Return to the starting position."
+
+  }
+]

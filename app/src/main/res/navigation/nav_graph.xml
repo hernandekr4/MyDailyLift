@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.mydailylift.app.ui.fragments.HomeScreenFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home_screen" />
+
+
+    <fragment
+        android:id="@+id/nav_exercises"
+        android:name="com.mydailylift.app.ui.fragments.ExercisesFragment"
+        android:label="Exercises"
+        tools:layout="@layout/fragment_exercises" />
+
+
+    <!-- Routines Fragment -->
+    <fragment
+        android:id="@+id/nav_routines"
+        android:name="com.mydailylift.app.ui.fragments.RoutinesFragment"
+        android:label="Routines"
+        tools:layout="@layout/fragment_routines">
+        <!-- Nested Routines Graph -->
+        <include app:graph="@navigation/routines_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_progress"
+        android:name="com.mydailylift.app.ui.fragments.ProgressFragment"
+        android:label="Progress"
+        tools:layout="@layout/fragment_progress" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.mydailylift.app.ui.fragments.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+
+
+</navigation>

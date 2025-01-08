@@ -2,21 +2,38 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_gray"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Message when no routines exist -->
+    <TextView
+        android:id="@+id/no_routines_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No routines found! Click the + button to add one."
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="8dp" />
+
+    <!-- RecyclerView for Routines -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:background="@color/white" />
 
+    <!-- Floating Action Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_routine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
+        android:layout_gravity="end"
         android:layout_margin="16dp"
+        android:contentDescription="Add Routine"
         android:src="@drawable/ic_add"
-        android:contentDescription="Add Routine" />
+        android:backgroundTint="@color/teal_200" />
 </LinearLayout>

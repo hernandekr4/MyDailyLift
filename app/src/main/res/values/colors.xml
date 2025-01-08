@@ -10,5 +10,7 @@
     <color name="selected_item_color">#FFBB86FC</color>
     <color name="pressed_item_color">#FF3700B3</color>
     <color name="default_item_color">#E0E0E0</color>
+    <color name="light_gray">#F2F2F2</color>
+
 
 </resources>

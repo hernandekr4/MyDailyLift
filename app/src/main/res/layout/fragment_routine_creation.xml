@@ -1,0 +1,53 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Routine Name -->
+    <EditText
+        android:id="@+id/routine_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/hint_routine_name"
+        android:inputType="text"
+        android:padding="12dp"
+        android:autofillHints="name"
+        android:textSize="16sp"
+        android:maxWidth="488dp"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:textColor="@android:color/black" />
+
+    <!-- Add Exercises Button -->
+    <Button
+        android:id="@+id/add_exercises_button"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/button_add_exercises"
+        android:textSize="16sp"
+        android:maxWidth="320dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:textColor="@android:color/black" />
+
+    <!-- RecyclerView to Display Added Exercises -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/added_exercises_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp" />
+
+    <!-- Save Routine Button -->
+    <Button
+        android:id="@+id/save_routine_button"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/button_save_routine"
+        android:textSize="16sp"
+        android:maxWidth="320dp"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:textColor="@android:color/black" />
+</LinearLayout>

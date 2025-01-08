@@ -1,5 +1,6 @@
 package com.mydailylift.app.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mydailylift.app.R
 import com.mydailylift.app.data.Exercise
 
-
-class ExercisesAdapter : ListAdapter<Exercise, ExercisesAdapter.ExerciseViewHolder>(
-    ExerciseDiffCallback()
-) {
+class ExercisesAdapter :
+    ListAdapter<Exercise, ExercisesAdapter.ExerciseViewHolder>(ExerciseDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_exercise, parent, false)
@@ -21,7 +20,9 @@ class ExercisesAdapter : ListAdapter<Exercise, ExercisesAdapter.ExerciseViewHold
     }
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val exercise = getItem(position)
+        holder.bind(exercise)
+        Log.d("ExercisesAdapter", "Binding exercise: ${exercise.name}")
     }
 
     class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -35,7 +36,10 @@ class ExercisesAdapter : ListAdapter<Exercise, ExercisesAdapter.ExerciseViewHold
     }
 
     class ExerciseDiffCallback : DiffUtil.ItemCallback<Exercise>() {
-        override fun areItemsTheSame(oldItem: Exercise, newItem: Exercise): Boolean = oldItem.id == newItem.id
-        override fun areContentsTheSame(oldItem: Exercise, newItem: Exercise): Boolean = oldItem == newItem
+        override fun areItemsTheSame(oldItem: Exercise, newItem: Exercise): Boolean =
+            oldItem.id == newItem.id
+
+        override fun areContentsTheSame(oldItem: Exercise, newItem: Exercise): Boolean =
+            oldItem == newItem
     }
 }

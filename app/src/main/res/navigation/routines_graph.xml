@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/routines_graph">
+
+
+    <!-- Routines Screen -->
+    <fragment
+        android:id="@+id/routinesFragment"
+        android:name="com.mydailylift.app.ui.fragments.RoutinesFragment"
+        android:label="Routines"
+        tools:layout="@layout/fragment_routines">
+        <action
+            android:id="@+id/action_routinesFragment_to_routineCreationFragment"
+            app:destination="@id/routineCreationFragment" />
+    </fragment>
+
+    <!-- Routine Creation Screen -->
+    <fragment
+        android:id="@+id/routineCreationFragment"
+        android:name="com.mydailylift.app.ui.fragments.RoutineCreationFragment"
+        android:label="Create Routine"
+        tools:layout="@layout/fragment_routine_creation">
+        <action
+            android:id="@+id/action_routineCreationFragment_to_exerciseSelectionFragment"
+            app:destination="@id/exerciseSelectionFragment" />
+    </fragment>
+
+    <!-- Exercise Selection Screen -->
+    <fragment
+        android:id="@+id/exerciseSelectionFragment"
+        android:name="com.mydailylift.app.ui.fragments.ExerciseSelectionFragment"
+        android:label="Select Exercises"
+        tools:layout="@layout/fragment_exercise_selection">
+        <action
+            android:id="@+id/action_exerciseSelectionFragment_to_createExerciseFragment"
+            app:destination="@id/createExerciseFragment" />
+    </fragment>
+
+    <!-- Create Exercise Screen -->
+    <fragment
+        android:id="@+id/createExerciseFragment"
+        android:name="com.mydailylift.app.ui.fragments.CreateExerciseFragment"
+        android:label="Create Exercise"
+        tools:layout="@layout/fragment_create_exercise">
+        <action
+            android:id="@+id/action_createExerciseFragment_to_exerciseSelectionFragment"
+            app:destination="@id/exerciseSelectionFragment" />
+    </fragment>
+
+</navigation>

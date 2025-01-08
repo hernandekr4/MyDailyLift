@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyDailyLift</string>
+    <string name="hint_routine_name">Enter Routine Name</string>
+    <string name="button_add_exercises">Add Exercises</string>
+    <string name="button_save_routine">Save Routine</string>
+
 </resources>

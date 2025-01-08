@@ -5,3 +5,9 @@ plugins {
     alias(libs.plugins.ksp) apply false // Add this line for KSP
 
 }
+
+buildscript {
+    dependencies {
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.8.5")
+    }
+}

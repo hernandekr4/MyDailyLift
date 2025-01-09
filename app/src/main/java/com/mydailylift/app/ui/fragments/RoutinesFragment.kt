@@ -67,22 +67,11 @@ class RoutinesFragment : Fragment() {
         recyclerView.adapter = routinesAdapter
         Log.d("RoutinesFragment", "RecyclerView and Adapter setup completed")
     }
+
     private fun fetchRoutines() {
         Log.d("RoutinesFragment", "Fetching routines from the database...")
         CoroutineScope(Dispatchers.IO).launch {
             val database = (requireActivity().application as DailyLiftApplication).database
-
-            // Insert a default routine for debugging if the database is empty
-            if (database.routineDao().getAllRoutines().isEmpty()) {
-                val debugRoutine = Routine(
-                    name = "Debug Routine",
-                    createdAt = "2025-01-08",
-                    exercises = listOf("Push-Up", "Squat")
-                )
-                database.routineDao().insertRoutine(debugRoutine)
-                Log.d("RoutinesFragment", "Inserted debug routine: $debugRoutine")
-            }
-
             val routines = database.routineDao().getAllRoutines()
 
             withContext(Dispatchers.Main) {
@@ -100,7 +89,6 @@ class RoutinesFragment : Fragment() {
         }
     }
 
-
     private fun startRoutine(routine: Routine) {
         Toast.makeText(requireContext(), "Start Routine: ${routine.name}", Toast.LENGTH_SHORT).show()
         Log.d("RoutinesFragment", "Start Routine clicked for: ${routine.name}")
@@ -114,8 +102,14 @@ class RoutinesFragment : Fragment() {
     }
 
     private fun addNewRoutine() {
-        val action = RoutinesFragmentDirections.actionRoutinesFragmentToRoutineCreationFragment()
-        Log.d("RoutinesFragment", "Navigating to Routine Creation screen")
-        findNavController().navigate(action)
+        try {
+            val action = RoutinesFragmentDirections.actionRoutinesFragmentToRoutineCreationFragment()
+            findNavController().navigate(action)
+            Log.d("RoutinesFragment", "Navigated to Routine Creation screen")
+        } catch (e: Exception) {
+            Log.e("RoutinesFragment", "Navigation failed: ${e.message}")
+            e.printStackTrace()
+        }
     }
+
 }

@@ -1,6 +1,7 @@
 package com.mydailylift.app.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,13 +20,8 @@ class HomeScreenFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(R.layout.fragment_home_screen, container, false)
-
-        // Initialize RecyclerView for weekly overview
-        weeklyOverview = rootView.findViewById(R.id.weekly_overview)
-        setupWeeklyOverview()
-
-        return rootView
+        Log.d("FragmentDebug", "Inflating layout for HomeScreenFragment")
+        return inflater.inflate(R.layout.fragment_home_screen, container, false)
     }
 
     private fun setupWeeklyOverview() {

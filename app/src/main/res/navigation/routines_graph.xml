@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/routines_graph">
 
-
-    <!-- Routines Screen -->
+    <!-- Routines List Screen -->
     <fragment
         android:id="@+id/routinesFragment"
         android:name="com.mydailylift.app.ui.fragments.RoutinesFragment"
@@ -14,6 +13,9 @@
         <action
             android:id="@+id/action_routinesFragment_to_routineCreationFragment"
             app:destination="@id/routineCreationFragment" />
+        <action
+            android:id="@+id/action_routinesFragment_to_routineDetailsFragment"
+            app:destination="@id/routineDetailsFragment" />
     </fragment>
 
     <!-- Routine Creation Screen -->
@@ -26,6 +28,13 @@
             android:id="@+id/action_routineCreationFragment_to_exerciseSelectionFragment"
             app:destination="@id/exerciseSelectionFragment" />
     </fragment>
+
+    <!-- Routine Details Screen -->
+    <fragment
+        android:id="@+id/routineDetailsFragment"
+        android:name="com.mydailylift.app.ui.fragments.RoutineDetailsFragment"
+        android:label="Routine Details"
+        tools:layout="@layout/fragment_routine_details" />
 
     <!-- Exercise Selection Screen -->
     <fragment

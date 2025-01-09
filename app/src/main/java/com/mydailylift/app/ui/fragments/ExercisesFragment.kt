@@ -30,26 +30,8 @@ class ExercisesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(R.layout.fragment_exercises, container, false)
-
-        // Initialize views
-        recyclerView = rootView.findViewById(R.id.recycler_view)
-        createRoutineButton = rootView.findViewById(R.id.create_routine_button)
-
-        // Setup RecyclerView
-        setupRecyclerView()
-
-        // Fetch exercises and display them
-        fetchExercises()
-
-        // Set button click listener
-        createRoutineButton.setOnClickListener {
-            Toast.makeText(requireContext(), "Create Routine button clicked", Toast.LENGTH_SHORT).show()
-            Log.d("ExercisesFragment", "Create Routine button clicked")
-            // TODO: Implement navigation to Create Routine screen
-        }
-
-        return rootView
+        Log.d("FragmentDebug", "Inflating layout for ExercisesFragment")
+        return inflater.inflate(R.layout.fragment_exercises, container, false)
     }
 
     private fun setupRecyclerView() {

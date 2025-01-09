@@ -13,10 +13,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         // Set up the NavHostFragment
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        if (navHostFragment == null) {
+            Log.e("MainActivityDebug", "NavHostFragment not found!")
+        } else {
+            Log.d("MainActivityDebug", "NavHostFragment successfully initialized")
+        }
         val navController = navHostFragment.navController
 
         // Set up BottomNavigationView with NavController

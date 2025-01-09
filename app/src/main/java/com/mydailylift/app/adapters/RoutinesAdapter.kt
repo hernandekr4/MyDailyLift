@@ -31,13 +31,6 @@ class RoutinesAdapter(
         return routines.size
     }
 
-    fun submitList(newRoutines: List<Routine>) {
-        routines.clear()
-        routines.addAll(newRoutines)
-        notifyDataSetChanged()
-        Log.d("RoutinesAdapter", "Updated routine list: $newRoutines")
-    }
-
     class RoutineViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val routineName: TextView = itemView.findViewById(R.id.routine_name)
         private val startButton: Button = itemView.findViewById(R.id.start_button)
@@ -45,14 +38,16 @@ class RoutinesAdapter(
 
         fun bind(routine: Routine, onActionClick: (Routine, String) -> Unit) {
             routineName.text = routine.name
-            startButton.setOnClickListener {
-                Log.d("RoutinesAdapter", "Start button clicked for routine: ${routine.name}")
-                onActionClick(routine, "start")
-            }
-            editButton.setOnClickListener {
-                Log.d("RoutinesAdapter", "Edit button clicked for routine: ${routine.name}")
-                onActionClick(routine, "edit")
-            }
+            startButton.setOnClickListener { onActionClick(routine, "start") }
+            editButton.setOnClickListener { onActionClick(routine, "edit") }
+            Log.d("RoutinesAdapter", "Routine bound: ${routine.name}")
         }
+    }
+
+    fun submitList(newRoutines: List<Routine>) {
+        routines.clear()
+        routines.addAll(newRoutines)
+        notifyDataSetChanged()
+        Log.d("RoutinesAdapter", "Routines list updated: $newRoutines")
     }
 }

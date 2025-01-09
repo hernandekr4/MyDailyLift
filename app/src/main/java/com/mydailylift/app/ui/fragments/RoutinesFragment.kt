@@ -101,6 +101,7 @@ class RoutinesFragment : Fragment() {
         // TODO: Implement navigation to the Edit Routine screen
     }
 
+
     private fun addNewRoutine() {
         try {
             val action = RoutinesFragmentDirections.actionRoutinesFragmentToRoutineCreationFragment()
@@ -111,5 +112,6 @@ class RoutinesFragment : Fragment() {
             e.printStackTrace()
         }
     }
+
 
 }

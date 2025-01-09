@@ -4,35 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/nav_home">
 
-    <!-- Home Screen -->
+    <!-- Home Fragment -->
     <fragment
         android:id="@+id/nav_home"
         android:name="com.mydailylift.app.ui.fragments.HomeScreenFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home_screen" />
 
-    <!-- Exercises Screen -->
+    <!-- Exercises Fragment -->
     <fragment
         android:id="@+id/nav_exercises"
         android:name="com.mydailylift.app.ui.fragments.ExercisesFragment"
         android:label="Exercises"
         tools:layout="@layout/fragment_exercises" />
 
-    <!-- Progress Screen -->
+    <!-- Routines Graph -->
+    <fragment
+        android:id="@+id/nav_routines"
+        android:name="com.mydailylift.app.ui.fragments.RoutinesFragment"
+        android:label="Routines"
+        tools:layout="@layout/fragment_routines">
+        <action
+            android:id="@+id/action_routinesFragment_to_routineCreationFragment"
+            app:destination="@id/routineCreationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/routineCreationFragment"
+        android:name="com.mydailylift.app.ui.fragments.RoutineCreationFragment"
+        android:label="Create Routine"
+        tools:layout="@layout/fragment_routine_creation" />
+
+    <!-- Progress Fragment -->
     <fragment
         android:id="@+id/nav_progress"
         android:name="com.mydailylift.app.ui.fragments.ProgressFragment"
         android:label="Progress"
         tools:layout="@layout/fragment_progress" />
 
-    <!-- Settings Screen -->
+    <!-- Settings Fragment -->
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.mydailylift.app.ui.fragments.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
-
-    <!-- Include Routines Graph -->
-    <include app:graph="@navigation/routines_graph" />
-
 </navigation>

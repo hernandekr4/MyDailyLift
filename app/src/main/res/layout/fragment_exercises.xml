@@ -21,10 +21,14 @@
         android:layout_weight="1"
         android:paddingBottom="16dp" />
 
-    <Button
-        android:id="@+id/create_routine_button"
-        android:layout_width="match_parent"
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_exercise"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Create Routine" />
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add"
+        android:backgroundTint="@color/teal_200"
+        android:contentDescription="Add Exercise" />
 </LinearLayout>

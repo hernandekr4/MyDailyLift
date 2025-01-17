@@ -12,4 +12,7 @@ interface ExerciseDao {
 
     @Insert
     suspend fun insertAll(vararg exercises: Exercise)
+
+    @Query("DELETE FROM exercise_table WHERE id = :exerciseId")
+    suspend fun deleteExercise(exerciseId: String)
 }

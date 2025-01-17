@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -11,12 +12,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mydailylift.app.R
 import com.mydailylift.app.data.Exercise
 
-class ExercisesAdapter :
-    ListAdapter<Exercise, ExercisesAdapter.ExerciseViewHolder>(ExerciseDiffCallback()) {
+class ExercisesAdapter(
+    private val onDetailsClick: (Exercise) -> Unit // Lambda for handling details click
+) : ListAdapter<Exercise, ExercisesAdapter.ExerciseViewHolder>(ExerciseDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_exercise, parent, false)
-        return ExerciseViewHolder(view)
+        return ExerciseViewHolder(view, onDetailsClick)
     }
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
@@ -25,13 +27,19 @@ class ExercisesAdapter :
         Log.d("ExercisesAdapter", "Binding exercise: ${exercise.name}")
     }
 
-    class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ExerciseViewHolder(
+        itemView: View,
+        private val onDetailsClick: (Exercise) -> Unit
+    ) : RecyclerView.ViewHolder(itemView) {
+
         private val nameTextView: TextView = itemView.findViewById(R.id.exercise_name)
         private val targetTextView: TextView = itemView.findViewById(R.id.exercise_target)
+        private val detailsButton: Button = itemView.findViewById(R.id.details_button)
 
         fun bind(exercise: Exercise) {
             nameTextView.text = exercise.name
             targetTextView.text = exercise.target
+            detailsButton.setOnClickListener { onDetailsClick(exercise) }
         }
     }
 

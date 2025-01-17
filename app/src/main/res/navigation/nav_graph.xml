@@ -16,7 +16,44 @@
         android:id="@+id/nav_exercises"
         android:name="com.mydailylift.app.ui.fragments.ExercisesFragment"
         android:label="Exercises"
-        tools:layout="@layout/fragment_exercises" />
+        tools:layout="@layout/fragment_exercises">
+        <action
+            android:id="@+id/actionExercisesFragmentToExerciseDetailsFragment"
+            app:destination="@id/exerciseDetailsFragment" />
+    </fragment>
+
+    <!-- Exercise Selection Fragment -->
+    <fragment
+        android:id="@+id/exerciseSelectionFragment"
+        android:name="com.mydailylift.app.ui.fragments.ExerciseSelectionFragment"
+        android:label="Exercise Selection"
+        tools:layout="@layout/fragment_exercise_selection">
+        <action
+            android:id="@+id/actionExerciseSelectionFragmentToCreateExerciseFragment"
+            app:destination="@id/createExerciseFragment" />
+        <action
+            android:id="@+id/actionExerciseSelectionFragmentToExerciseDetailsFragment"
+            app:destination="@id/exerciseDetailsFragment" />
+    </fragment>
+
+    <!-- Create Exercise Fragment -->
+    <fragment
+        android:id="@+id/createExerciseFragment"
+        android:name="com.mydailylift.app.ui.fragments.CreateExerciseFragment"
+        android:label="Create Exercise"
+        tools:layout="@layout/fragment_create_exercise" />
+
+    <!-- Exercise Details Fragment -->
+    <fragment
+        android:id="@+id/exerciseDetailsFragment"
+        android:name="com.mydailylift.app.ui.fragments.ExerciseDetailsFragment"
+        android:label="Exercise Details"
+        tools:layout="@layout/fragment_exercise_details">
+        <argument
+            android:name="exercise"
+            app:argType="com.mydailylift.app.data.Exercise"
+            app:nullable="false"/>
+    </fragment>
 
     <!-- Routines Graph -->
     <fragment
@@ -28,6 +65,7 @@
             android:id="@+id/action_routinesFragment_to_routineCreationFragment"
             app:destination="@id/routineCreationFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/routineCreationFragment"
         android:name="com.mydailylift.app.ui.fragments.RoutineCreationFragment"
@@ -47,4 +85,5 @@
         android:name="com.mydailylift.app.ui.fragments.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
+
 </navigation>

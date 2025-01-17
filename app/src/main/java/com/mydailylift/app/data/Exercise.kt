@@ -1,8 +1,11 @@
 package com.mydailylift.app.data
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity(tableName = "exercise_table")
 data class Exercise(
     @PrimaryKey val id: String,
@@ -12,4 +15,4 @@ data class Exercise(
     val equipment: String,
     val secondaryMuscles: String,
     val instructions: String
-)
+) : Parcelable

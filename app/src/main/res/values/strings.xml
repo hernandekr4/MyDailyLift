@@ -4,4 +4,24 @@
     <string name="button_add_exercises">Add Exercises</string>
     <string name="button_save_routine">Save Routine</string>
 
+    <!-- Array for Body Parts -->
+    <string-array name="body_parts_array">
+        <item>Chest</item>
+        <item>Back</item>
+        <item>Legs</item>
+        <item>Arms</item>
+        <item>Shoulders</item>
+        <item>Core</item>
+    </string-array>
+
+    <!-- Array for Equipment Types -->
+    <string-array name="equipment_types_array">
+        <item>None</item>
+        <item>Barbell</item>
+        <item>Dumbbell</item>
+        <item>Machine</item>
+        <item>Resistance Bands</item>
+        <item>Bodyweight</item>
+    </string-array>
+
 </resources>

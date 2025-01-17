@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.ksp) apply false // Add this line for KSP
+    alias(libs.plugins.navigation.safe.args) apply false
+
 
 }
 

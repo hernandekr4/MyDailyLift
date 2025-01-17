@@ -28,7 +28,9 @@ class RoutineCreationFragment : Fragment() {
     private lateinit var addExercisesButton: Button
     private lateinit var saveRoutineButton: Button
     private lateinit var recyclerView: RecyclerView
-    private val addedExercisesAdapter = ExercisesAdapter()
+    private val addedExercisesAdapter = ExercisesAdapter(onDetailsClick = { exercise ->
+        Toast.makeText(requireContext(), "Details for ${exercise.name} coming soon!", Toast.LENGTH_SHORT).show()
+    })
 
     override fun onCreateView(
         inflater: LayoutInflater,
